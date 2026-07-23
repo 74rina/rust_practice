@@ -35,7 +35,7 @@ fn main() {
     // let a = [1, 2, 3];
     // let a: [i32, 5] = [1, 2, 3, 4, 5];
     let a = [3; 5];
-    
+
     println!("my sum function: {}", add(2, 3));
 
     // 条件分岐
@@ -58,7 +58,6 @@ fn main() {
         println!("{}", elm);
     }
 
-    // 所有権
 }
 
 
