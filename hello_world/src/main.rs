@@ -58,12 +58,50 @@ fn main() {
         println!("{}", elm);
     }
 
-}
+    // 構造体のインスタンスを作成・メソッドにアクセス
+    let new_user = User{ name: String::from("rina"), age: 20 };
+    new_user.greet();
 
+    // enum型の使用例
+    let light = TrafficLight::Red;
+    action(light);
+
+}
 
 // 関数
 // 末尾に式（セミコロンなし）を書くと、それが返り値になる
 // セミコロンをつけると、式ではなく文となる
 fn add(x: i32, y: i32) -> i32 {
     x + y
+}
+
+// 構造体
+struct User {
+    name: String,
+    age: u32,
+}
+impl User {
+    fn greet(&self) {
+        println!("Hello, {}!", &self.name);
+    }
+}
+
+// enum型（複数の値を取りうる型）
+enum Message {
+    Quit,
+    Move { x: i32, y: i32 },
+    Write(String),
+}
+
+enum TrafficLight {
+    Red,
+    Yellow,
+    Green
+}
+fn action(light: TrafficLight) {
+    match light {
+        TrafficLight::Red => println!{"止まる"},
+        TrafficLight::Yellow => println!{"注意する"},
+        TrafficLight::Green => println!{"進む"},
+    }
 }
